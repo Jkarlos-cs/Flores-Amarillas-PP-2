@@ -1,0 +1,202 @@
+/*© Zero - Código libre no comercial*/
+
+body {
+  font-size: 16px;
+}
+
+.tree-container {
+  width: 92vw !important;
+  height: 62vw !important;
+  max-width: 98vw;
+  max-height: 80vw;
+  min-width: 180px;
+  min-height: 180px;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.tree-container svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.tree-container svg.move-and-scale {
+  transition: transform 1.2s cubic-bezier(.77,0,.18,1);
+  transform-origin: center center;
+  transform: translateY(-85px) scale(0.72);
+}
+
+.dedication-text {
+  position: fixed;
+  top: 68%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(88vw, 580px);
+  font-size: 1rem;
+  line-height: 1.4;
+  text-align: center;
+  color: #4e342e;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre-line;
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dedication-text.typing {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.signature {
+  position: static;
+  display: block;
+  margin: 2.2em auto 0 auto;
+  left: auto;
+  bottom: auto;
+  transform: none;
+  font-size: 1.25rem;
+  color: #e60026;
+  opacity: 0;
+  z-index: 5;
+  white-space: pre;
+  pointer-events: none;
+  transition: opacity 0.7s;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .signature {
+    position: static;
+    display: block;
+    margin: 2.2em auto 0 auto;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    font-size: 1.25rem;
+    text-align: center;
+  }
+}
+
+.countdown {
+  position: fixed;
+  left: 50%;
+  bottom: 10vw;
+  transform: translateX(-50%);
+  font-size: 0.98rem;
+  min-width: 60vw;
+  max-width: 92vw;
+  text-align: center;
+  padding: 0.5em 0.7em;
+  border-radius: 1em;
+  background: #fff8;
+  box-shadow: 0 2px 8px #e6002611;
+  z-index: 6;
+  pointer-events: none;
+  letter-spacing: 0.05em;
+  transition: opacity 0.8s cubic-bezier(.77,0,.18,1), transform 0.8s cubic-bezier(.77,0,.18,1);
+  opacity: 0;
+  transform: translateX(-50%) translateY(30px);
+}
+
+.countdown.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Ajusta los pétalos flotantes */
+.floating-petal {
+  width: 13px;
+  height: 18px;
+}
+
+.dedication-text.typing {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.signature.visible {
+  opacity: 1;
+}
+
+
+@media (max-width: 700px) {
+  .tree-container svg.move-and-scale {
+    transform: translateY(-55px) scale(0.92);
+  }
+
+  .dedication-text {
+    top: 63%;
+    width: 90vw;
+    font-size: 0.84rem;
+    line-height: 1.35;
+  }
+}
+.credit {
+  margin-top: 1rem;
+  color: #7E57A2;
+  font-family: Arial, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.credit.visible {
+  opacity: 0.55;
+}
+
+.floating-logo {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 10;
+  opacity: 0;
+  animation: showLogo 1.2s ease 7s forwards;
+}
+
+.floating-logo img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  opacity: 0.72;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.18));
+  animation: floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes showLogo {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes floatLogo {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+@media (max-width: 700px) {
+  .floating-logo {
+    left: 12px;
+    bottom: 12px;
+  }
+
+  .floating-logo img {
+    width: 46px;
+    height: 46px;
+  }
+}
