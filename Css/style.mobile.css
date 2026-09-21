@@ -194,7 +194,18 @@ body {
     left: 12px;
     bottom: 12px;
   }
+@media screen and (max-width: 700px) {
+  .tree-container svg.move-and-scale {
+    transform: translateY(-45px) scale(0.95) !important;
+  }
 
+  .dedication-text {
+    top: 62% !important;
+    width: 92vw !important;
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+  }
+}
   .floating-logo img {
     width: 46px;
     height: 46px;
