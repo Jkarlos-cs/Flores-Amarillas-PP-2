@@ -211,3 +211,45 @@ body {
     height: 46px;
   }
 }
+
+.club-title {
+  position: fixed;
+  top: 11%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  font-family: "Cinzel", serif;
+  opacity: 0;
+  animation: showClubTitle 2s ease 1s forwards;
+  z-index: 10;
+}
+
+.club-name {
+  display: block;
+  color: #5d4037;
+  font-size: 1.55rem;
+  letter-spacing: 4px;
+  font-weight: 600;
+}
+
+.club-city {
+  display: block;
+  margin-top: 5px;
+  color: #d49a16;
+  font-size: 0.85rem;
+  letter-spacing: 6px;
+}
+
+@keyframes showClubTitle {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -12px);
+  }
+
+  to {
+    opacity: 0.85;
+    transform: translate(-50%, 0);
+  }
+}
+
